@@ -14,3 +14,10 @@ for _ in range(1000):
     if done:
         obs=env.reset()
     env.close()
+
+    os.makedirs("videos",exist_ok=True)
+    height,width,_=frame[0].shape
+    out = cv2.VideoWriter("videos/drive.mp4", cv2.VideoWriter_fourcc(*"mp4v"), 30, (width, height))
+    for frame in frames:
+        out.write(frame)
+    out.release()
