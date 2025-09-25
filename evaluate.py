@@ -3,7 +3,8 @@ import gym
 import cv2
 import os
 
-env = gym.make("CarRacing-v0", render_mode="rgb_array")
+env = gym.make("CarRacing-v2", render_mode="rgb_array")
+
 model = PPO.load("models/ppo_car_racing")
 
 for _ in range(1000):
