@@ -1,7 +1,8 @@
 from stable_baselines3 import PPO
-import gym
 import os
+import gymnasium as gym
 env = gym.make("CarRacing-v2", render_mode="rgb_array")
+
 
 model=PPO("CnnPolicy",env,verbose=1,device="cpu")
 model.learn(total_timesteps=100_000)
